@@ -1,7 +1,7 @@
 # BFMeta
 BFMeta program
 
-This project intends to implement Bayesian random-effect meta-analysis for fMRI studies. fmri_bmeta_random1.R performs voxelwise Bayesian random-effect meta-analysis of included fMRI studies (in list.csv) to examine the mean and median effect size (+ BF, Bayes factors) in each voxel in a specific task comparison. It gets nifti file inputs in SPM-MNI format (91x109x91). All input nifti files should contain either t or z scores with thresholding. File names, type of statistics (t vs z), and sample size (how many subject?) should be specified in list.csv.
+This project intends to implement Bayesian random-effect meta-analysis for fMRI studies. fmri_bmeta_random1.R performs voxelwise Bayesian random-effect meta-analysis of included fMRI studies (in list.csv) to examine the mean and median effect size (+ BF, Bayes factors) in each voxel in a specific task comparison. It gets nifti file inputs in SPM-MNI format (91x109x91). All input nifti files (currently, all files from previous fMRI experiments of (working) memory) should contain either t or z scores with thresholding. File names, type of statistics (t vs z), and sample size (how many subject?) should be specified in list.csv.
 
 fmri_bmeta_random1.R requires one parameter, X (1 to 91) coordinate to be analyzed. In order to facilitate the parallelization of computing processes, fmri_bmeta_random1.R performs Bayesian random-effect meta-analysis for only one X. Thus, it should be executed like this:
 
@@ -24,3 +24,4 @@ To facilitate parallel processing, four bash scripts (*.sh) are also provided. T
 For Reference:
 NeuroSynth decoding with Means.nii, see http://neurosynth.org/decode/?neurovault=64375
 "Working memory" showed the highest P(H|D).
+
