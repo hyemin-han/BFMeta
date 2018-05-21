@@ -20,3 +20,7 @@ fmri_bmeta_random1.R automatically creates an output folder, "Outputs." Under th
 Once all RData files are created for X to 91, integrate_result.R should be executed to create result nifti files. Bayes factors will be reported in BFs.nii. Mean posterior effect size values will be stored in Means.nii. Finally, Median posterior effect size values will be saved in Medians.nii
 
 To facilitate parallel processing, four bash scripts (*.sh) are also provided. These files are provided to perform fmri_bmeta_random1.R for X 1 to 91 with four cores.
+
+For Reference:
+NeuroSynth decoding with Means.nii, see http://neurosynth.org/decode/?neurovault=64375
+"Working memory" showed the highest P(H|D).
