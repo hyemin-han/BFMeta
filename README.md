@@ -32,3 +32,7 @@ NeuroSynth decoding with Means.nii, see http://neurosynth.org/decode/?neurovault
 <b> Thresholding </b>
 
 Once everything is done, we can create a thresholded image for convenience with BFs.nii, Means.nii, and Medians.nii. Run threshold.py. Enter 2logBF threshold value and type of image. Then, a resultant nifti file will be created. For instance, once we set 2logBF threshold = 6 (strong evidence) and image type = mean image, then a resultant nifti file (filename = 2logBF_6.000000_Mean.nii) will report mean effect size values in voxels where voxel 2logBF >= 6. All other voxels will be marked with zero (for voxels with valid effect size values) or NaN (for voxels that were initially marked with NaN).
+
+<b> Classical random-effect meta-analysis (for comparison) </b>
+
+In ./Classical folder, files necessary to perform classical random-effect meta-analysis are available.
