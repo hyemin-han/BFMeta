@@ -40,6 +40,16 @@ if MM == 2:
 
 Curdata = Curimg.get_data()
 
+# Direction
+Direction = int (input('1. + thresholding? 2. - thresholding? 3. bi-direction?'))
+
+if Direction == 1:
+	Sign = '+'
+if Direction == 2:
+	Sign = '-'
+if Direction == 3:
+	Sign = 'all'
+
 # Create result image
 Result = np.zeros((91,109,91))
 
@@ -58,10 +68,26 @@ for x in xrange(1,91):
 			if (BFdata[x][y][z] < BF):
 				Result[x][y][z] = 0
 			else:
-				Result[x][y][z] = Curdata[x][y][z]
+				# defending on the Sign
+				if Direction == 3:
+					# bi-direction
+					Result[x][y][z] = Curdata[x][y][z]
+				if Direction == 1:
+					# only A>B (+)
+					if Curdata[x][y][z] >0:
+						Result[x][y][z] = Curdata[x][y][z]
+					else:
+						Result[x][y][z] = 0
+				if Direction == 2:
+					# only A<B (-)
+					if Curdata[x][y][z] <0:
+						Result[x][y][z] = Curdata[x][y][z]
+					else:
+						Result[x][y][z] = 0	
+
 	
 # create resultant image
 array_img = nib.Nifti1Image(Result, BFimg.affine)
 # save thresholded image
-filename =('2logBF_%f_%s.nii' %(logBF,Type))
+filename =('2logBF_%f_%s_%s.nii' %(logBF,Type,Sign))
 nib.save(array_img, filename)
