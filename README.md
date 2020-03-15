@@ -1,5 +1,7 @@
 # BFMeta
 
+*** For the more up-to-date version, please see BayesFMRI: https://github.com/hyemin-han/BayesFMRI
+
 *** Further details are presented in a paper published in Cognitive Neuroscience (link: http://bit.ly/2RCbxZY).
 *** Please refer to and cite this article:
  Han, H., & Park, J. (2019). Bayesian meta-analysis of fMRI image data. Cognitive neuroscience, 10(2), 66-76.
